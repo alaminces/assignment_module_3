@@ -10,8 +10,18 @@ $studentGrades = [
 
 function averageStudentGrades($studentGrades) {
   foreach($studentGrades as $student => $grades) {
-    $average = array_sum($grades) / count($grades);
-    echo "Average Grade of {$student} : {$average}\n";
+    $averageMark = array_sum($grades) / count($grades);
+    if ($averageMark >= 90) {
+      echo "Average Grade of {$student} is A+\n";
+    }elseif($averageMark >= 80) {
+      echo "Average Grade of {$student} is A\n";
+    }elseif($averageMark >= 70) {
+      echo "Average Grade of {$student} is B\n";
+    }elseif($averageMark >= 60) {
+      echo "Average Grade of {$student} is C\n";
+    }else {
+      echo "Average Grade of {$student} is F\n";
+    }
   }
 }
 
